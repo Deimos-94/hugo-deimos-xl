@@ -21,3 +21,23 @@ weight = 30
   [module.hugoVersion]
     extended = false
     min = "0.116.0"
+
+
+defaultContentLanguage = 'en'
+# defaultContentLanguageInSubdir = 'false'
+[languages]
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en'
+    title = 'In English'
+    weight = 100
+  [languages.de]
+    languageName = 'Deutsch'
+    languageCode = 'de-DE'
+    title = 'En Deutsch'
+    weight = 200
+  [languages.ru]
+    languageName = 'Русский'
+    languageCode = 'ru'
+    title = 'En Русский'
+    weight = 300
