@@ -3,12 +3,38 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   margin: 1rem;
-  max-width: 768px;
+/*  max-width: 65ch;*/
+}
+
+main {
+/*  display: flex;
+  flex-wrap: wrap;*/
+/*  max-width: 65ch;*/
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 32px;
 }
 
 header {
   border-bottom: 1px solid #222;
   margin-bottom: 1rem;
+}
+.headerNav {
+}
+.headerNav > ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.headerItem {
+  padding: 12px;
+}
+
+.card {
+  margin: 32px;
+  border-width: 2px;
+  background-color: lightsalmon;
+  max-width: 288px; /*image height will be 162*/
 }
 
 footer {
@@ -17,6 +43,9 @@ footer {
 }
 
 a {
-  color: #00e;
+  color: #e00;
   text-decoration: none;
+}
+a:visited {
+  color: #b08;
 }
