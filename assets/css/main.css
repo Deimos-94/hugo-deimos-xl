@@ -37,7 +37,7 @@ header {
 }
 
 .cards {
-  background-color: #600606;
+/*  background-color: #600606;*/
   display: flex;
   flex-wrap: wrap;
 }
@@ -45,13 +45,23 @@ header {
 .card {
   margin: 32px;
   border-width: 2px;
-  background-color: lightsalmon;
+  background-color: #333;
   max-width: 288px; /*image height will be 162*/
+}
+.card > p, h2 {
+  margin: 4px 16px 16px 16px;
 }
 
 .singleContent {
   margin: auto;
   max-width: 65ch;
+}
+blockquote {
+  border-color: darkred;
+  border-width: 0 0 0 4px;
+  border-style: solid;
+  padding-left: 24px;
+  margin: 0;
 }
 
 footer {
