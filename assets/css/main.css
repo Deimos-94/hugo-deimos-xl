@@ -1,18 +1,23 @@
 body {
-  color: #222;
+  color: #eee;
+  background-color: #222;
   font-family: sans-serif;
   line-height: 1.5;
-  margin: 1rem;
+  margin: 0;
 /*  max-width: 65ch;*/
 }
 
 main {
-/*  display: flex;
-  flex-wrap: wrap;*/
+  display: grid;
+  grid-template-columns: 1fr min(1200px, 100%) 1fr;
+  
 /*  max-width: 65ch;*/
-  max-width: 1280px;
+/*  max-width: 1280px;*/
   margin: auto;
   padding: 0 32px;
+}
+.gridWrapper > * {
+  grid-column: 2;
 }
 
 header {
@@ -25,9 +30,16 @@ header {
   list-style: none;
   padding: 0;
   display: flex;
+/*  flex-wrap: wrap;*/
 }
 .headerItem {
   padding: 12px;
+}
+
+.cards {
+  background-color: #600606;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -35,6 +47,11 @@ header {
   border-width: 2px;
   background-color: lightsalmon;
   max-width: 288px; /*image height will be 162*/
+}
+
+.singleContent {
+  margin: auto;
+  max-width: 65ch;
 }
 
 footer {
