@@ -47,18 +47,31 @@ header {
 
 .cards {
 /*  background-color: #600606;*/
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 1024px) {
+  .cards {
+    /*2 cards */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cards {
+    /*1 card */
+    grid-template-columns: 1fr;
+    margin: auto;
+  }
 }
 
 .card {
-  margin: 32px;
-  border-width: 2px;
+  margin: 5%;
   background-color: #333;
   max-width: 288px; /*image height will be 162*/
   max-height: 462px;
   overflow: hidden;
 }
+
 .card > p, h2 {
   margin: 4px 16px 16px 16px;
 }
