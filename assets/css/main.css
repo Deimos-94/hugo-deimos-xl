@@ -111,3 +111,63 @@ a {
 a:visited {
   color: var(--link-visited);
 }
+/* Tabs mit radio-Buttons */
+.tabbed menu { 
+  list-style-type: none;
+}
+
+.tabbed > input,
+.tabbed menu li {
+  display: none;
+}
+
+.tabbed menu>li {
+  padding: 20px;
+  width: 100%;
+  border: 1px solid silver;
+  background: hsl(200,40%,96%);
+  line-height: 1.5em;
+  letter-spacing: 0.3px;
+  color: #444;
+}
+#tab1:checked ~ menu .tab1,
+#tab2:checked ~ menu .tab2,
+#tab3:checked ~ menu .tab3 {
+  display: flex; 
+  justify-content: space-between; 
+  padding-bottom: 2em; 
+}
+nav label {
+   float: left;
+   padding: 15px 15px;
+   border-top: 1px solid silver;
+   border-right: 1px solid silver;
+   background: hsl(210,50%,50%);
+   color: #eee;
+}
+
+nav label:nth-child(1) { border-left: 1px solid silver; }
+nav label:hover { background: hsl(210,50%,40%); }
+nav label:active { background: #ffffff; }
+
+#tab1:checked ~ nav label[for="tab1"],
+#tab2:checked ~ nav label[for="tab2"],
+#tab3:checked ~ nav label[for="tab3"] {
+  background: white;
+  color: #111;
+  position: relative;
+  border-bottom: none;
+}
+
+#tab1:checked ~ nav label[for="tab1"]:after,
+#tab2:checked ~ nav label[for="tab2"]:after,
+#tab3:checked ~ nav label[for="tab3"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  left: 0;
+  bottom: -1px;
+}
