@@ -1,9 +1,19 @@
 {{ define "main" }}
+  <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <div class ="cards">{{ range site.RegularPages }}
-    <div class ="card">
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
+  <div class ="cards">{{ range .Pages }}
+    <div class="card">
+      <div class="card-thumbnail-container">
+        {{ with .Resources.GetMatch (.Params.thumbnail) }}
+          <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="card-thumbnail">
+        {{ end }}
+        <!-- If thumbnail doesn't exist in page bundle, use a default image or fallback -->
+        {{ if not (.Resources.GetMatch (.Params.thumbnail)) }}
+          <img src="/thumbnail.avif" alt="{{ $.Title }}" class="card-thumbnail">
+        {{ end }}
+        <h2 class="card-thumbnail-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      </div>
+      <p>{{ .Summary }}</p>
     </div>
   {{ end }}
   </div>

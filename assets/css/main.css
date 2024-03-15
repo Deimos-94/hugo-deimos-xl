@@ -65,15 +65,33 @@ header {
 }
 
 .card {
-  margin: 5%;
+  margin: 0 auto 5% auto;
+  /*margin: 5%;*/
   background-color: #333;
-  max-width: 288px; /*image height will be 162*/
+  max-width: 288px; /* 16:9 images will be 162px high */
   max-height: 462px;
   overflow: hidden;
 }
-
-.card > p, h2 {
+.card > p {
   margin: 4px 16px 16px 16px;
+}
+.card-thumbnail-container {
+    position: relative;
+    height: 162px;
+}
+.card-thumbnail {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+}
+.card-thumbnail-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add background color to enhance readability */
+    color: white; /* Optional: Adjust text color for better contrast */
+    padding: 5px; /* Optional: Add padding for better spacing */
+    margin: 0; /* Optional: Remove margin */
 }
 
 .singleContent {
