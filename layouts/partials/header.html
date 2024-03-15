@@ -1,14 +1,12 @@
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 
 {{ if .IsTranslated }}
-<h4>{{ i18n "translations" }}</h4>
-<ul>
+{{ i18n "translations" }}
+<ul class="nav-ul">
   {{ range .Translations }}
   <li>
-    <a href="{{ .RelPermalink }}">{{ .Lang }}: {{ .LinkTitle }}{{ if .IsPage }} ({{ i18n "wordCount" . }}){{ end }}</a>
+    <a href="{{ .RelPermalink }}">{{ .Lang }}: {{ .LinkTitle }}</a>
   </li>
   {{ end }}
 </ul>
 {{ end }}
-
-

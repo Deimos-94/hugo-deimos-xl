@@ -1,20 +1,25 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  <div class ="cards">{{ range .Pages }}
-    <div class="card">
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<div class ="cards">
+  {{ range .Paginator.Pages }}
+  <div class="card">
+    
+    <a href="{{ .RelPermalink }}">
       <div class="card-thumbnail-container">
         {{ with .Resources.GetMatch (.Params.thumbnail) }}
-          <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="card-thumbnail">
+        <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="card-thumbnail">
         {{ end }}
         <!-- If thumbnail doesn't exist in page bundle, use a default image or fallback -->
         {{ if not (.Resources.GetMatch (.Params.thumbnail)) }}
-          <img src="/thumbnail.avif" alt="{{ $.Title }}" class="card-thumbnail">
+        <img src="/thumbnail.avif" alt="{{ $.Title }}" class="card-thumbnail">
         {{ end }}
-        <h2 class="card-thumbnail-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        <h2 class="card-thumbnail-title">{{ .LinkTitle }}</h2>
       </div>
-      <p>{{ .Summary }}</p>
-    </div>
-  {{ end }}
+    </a>
+    <p>{{ .Summary }}</p>
   </div>
+  {{ end }}
+</div>
+{{ template "_internal/pagination.html" . }}
 {{ end }}

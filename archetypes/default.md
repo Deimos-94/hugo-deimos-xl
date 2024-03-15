@@ -2,7 +2,8 @@
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
 draft = true
-# tags = ['Windows', 'Linux']
+thumbnail = 'thumbnail.avif'
+tags = ['Windows', 'Linux']
 +++
 
 <!--more-->

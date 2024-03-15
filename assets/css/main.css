@@ -4,7 +4,7 @@
   --secondary: red;
   --link-visited: #8b0034;
 
-  --text: #eee;
+  --text: #eed;
 }
 
 body {
@@ -43,6 +43,13 @@ header {
 }
 .headerItem {
   padding: 12px;
+}
+.nav-ul {
+  list-style: none;
+}
+.nav-ul > li {
+  float: left;
+  margin: 4px 16px;
 }
 
 .cards {
@@ -87,11 +94,12 @@ header {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: Add background color to enhance readability */
-    color: white; /* Optional: Adjust text color for better contrast */
-    padding: 5px; /* Optional: Add padding for better spacing */
+/*    width: 100%;*/
+    color: var(--text);
+    text-shadow: 0 0 4px #000;
+    padding: 4px 16px; /* Optional: Add padding for better spacing */
     margin: 0; /* Optional: Remove margin */
+    text-overflow: ellipsis;
 }
 
 .singleContent {
